@@ -1,0 +1,47 @@
+Comandos GITHUB:
+
+MUY IMPORTANTE!!!!  --------> Revisar bien donde estoy parado antes de hacer el comando!!!!
+
+Para crear un repositorio dentro de VSCODE: 
+
+    git init
+
+Para clonar un repositorio:
+
+    git clone "elPathAClonar"
+
+Para actualizar los cambios que se hicieron el el repositorio:
+
+    git pull (ver bien donde estoy parado)
+
+Para moverme de carpeta/lugar:
+
+    cd "nombre de la carpeta"
+
+Para crear una rama:
+
+    git checkout -b "nombre"
+    git add .
+    git commit -m "Comentario"
+    git push origin "nombre de la rama"
+
+Para cambiarme de rama;
+
+    git checkout "Nombre de la rama"
+
+Para guardar cambios en la misma rama:
+
+    git add .
+    git commit -m "Comentario"
+    git push -u origin master
+
+Para traer nuevos cambios del repositorio y yo todavia no hice un push de mis cambios, hay dos opciones:
+
+    git stash - los guarda sin subirlo y me deja hacer el pull de lo nuevos
+
+    git stash drop - me borra todos los cambios que hice y puedo hacer el pull
+
+
+
+
+  
