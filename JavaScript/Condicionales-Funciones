@@ -1,0 +1,145 @@
+
+
+// let edad = 29
+
+// IF, ELSE IF, ELSE
+// if( edad < 18){
+//     console.log('Menor de edad');
+// } else if (edad < 22) {
+//     console.log('Es un joven adulto');
+// }else{
+//     console.log("Es un adulto");
+// }
+
+// Operador Ternario
+// Es una forma facil de resumir un if y else
+
+let edad = 20
+
+// console.log("Condicion: ", edad >= 18);
+
+// let permitido = edad >= 18 ? "Permitido" : "Denegado"
+
+let licencia = edad <= 18 ? "Denegado" : (edad <= 21) ? "Permitido con tutor" : "Permitido"
+
+// console.log("licencia: ", licencia);
+
+
+// Operador Logico &&
+// Se ejecuta si la condicion es true
+
+let permiso = true
+
+permiso && console.log("Permitido ");
+
+
+// Operador ?? 
+// solo considera null o undefined como valores vacios
+let username = "Matias"
+console.log("Bienvenido: ", username ?? "Desconcido");
+
+
+// Validar si accedemos a propiedades que todavia no existen o que no existen directamente
+
+const usuario = {
+    nombre: "Matias",
+    edad: 30,
+
+}
+
+setTimeout(() => {
+    usuario.direccion = {
+            calle: "La Plata",
+            altura: 29,
+            edificio: {
+                piso: 3,
+                dept: 4
+            }
+        }
+    
+}, 2000);
+
+console.log("Nombre: ", usuario.nombre);
+console.log("Direccion: ", usuario.direccion);
+console.log("Altura: ", usuario.direccion?.edificio.piso);
+
+
+
+let user = {
+    nombre: "Matias",
+    mensaje: saludar
+}
+
+
+// ----------- FUNCIONES ---------------
+
+// Funcion Declarada
+// Se puede invocar antes de su declaracion por hoisting
+function saludar(nombre){
+
+    if(!nombre){
+        return "Hola, quien eres?"
+    }
+    
+    return `Hola, ${nombre}`
+}
+
+// console.log(saludar(0));
+// console.log(saludar("Melissa"));
+// console.log(saludar("Matias"));
+
+
+// Asinar el valor de la funcion a una variable
+
+
+
+const despedir = function(nombre){
+    return `Adios, ${nombre}`
+}
+
+
+// console.log(user.mensaje('Laura'));
+
+// Funcion Flecha, o Arrow Function
+
+// se sobreentiende que si esta en la misma linea, el return es implicito
+// const sumar = (a, b) => a + b
+
+const sumar = (a, b) => {
+
+    return a + b
+}
+
+let a = 5
+let b = 22
+
+// console.log(`La suma de ${a} y ${b} es: `, sumar(a, b))
+
+const multiplicar = (a, b) => a * b 
+
+// console.log(`La multiplicacion de ${a} y ${b} es: `, multiplicar(a, b))
+
+let nombre = "Luis"
+
+const persona = {
+    nombre,
+    edad: 29,
+    saludar: function(){
+        return `Hola, soy ${this.edad}`
+    },
+    adios: () => `Adios`,
+    despedida(){
+        return `Nos vemos luego ${this.nombre}`
+    }
+}
+
+let resultados = {};
+
+const operaciones = (a, b) => {
+    resultados.suma = sumar(a, b)
+    resultados.multiplicar = multiplicar(a, b)
+}
+
+operaciones(5, 3);
+
+console.log(resultados);
